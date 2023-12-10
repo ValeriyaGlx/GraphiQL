@@ -1,3 +1,3 @@
 export * from './lang';
 export * from './trans';
-export * from './developers.ts';
+export * from './developers';
