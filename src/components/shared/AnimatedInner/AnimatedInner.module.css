@@ -1,0 +1,13 @@
+.inner {
+  font-size: 48px;
+}
+
+.underscore {
+  animation: blink 1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}

@@ -1,23 +1,30 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import Welcome from '../components/pages/Welcome.tsx';
+import Layout from '../components/widgets/Layout/Layout.tsx';
+import { SignUp, SingIn, Welcome } from '../components/pages';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Welcome />,
+    element: <Layout />,
     // errorElement: ,
-  },
-  {
-    path: '/sign-in',
-    element: <Welcome />,
-  },
-  {
-    path: '/sign-up',
-    element: <Welcome />,
-  },
-  {
-    path: '/graphiQL',
-    element: <Welcome />,
+    children: [
+      {
+        path: '/',
+        element: <Welcome />,
+      },
+      {
+        path: '/sign-in',
+        element: <SingIn />,
+      },
+      {
+        path: '/sign-up',
+        element: <SignUp />,
+      },
+      {
+        path: '/graphiQL',
+        element: <Welcome />,
+      },
+    ],
   },
 ]);
