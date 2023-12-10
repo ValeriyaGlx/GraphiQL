@@ -1,5 +1,5 @@
 .inner {
-  font-size: 48px;
+  font-size: var(--inner-font-size);
 }
 
 .underscore {

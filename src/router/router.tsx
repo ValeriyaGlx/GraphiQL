@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import Layout from '../components/widgets/Layout/Layout.tsx';
-import { SignUp, SingIn, Welcome } from '../components/pages';
+import { GraphiQL, PageNotFound, SignUp, SingIn, Welcome } from '../components/pages';
 
 export const router = createBrowserRouter([
   {
@@ -22,9 +22,13 @@ export const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
-        path: '/graphiQL',
-        element: <Welcome />,
+        path: '/graphi-ql',
+        element: <GraphiQL />,
       },
     ],
+  },
+  {
+    path: '*',
+    element: <PageNotFound />,
   },
 ]);

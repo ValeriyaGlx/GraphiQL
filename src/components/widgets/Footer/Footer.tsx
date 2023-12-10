@@ -5,7 +5,7 @@ import styles from './Footer.module.css';
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <span> &copy; {new Date().getFullYear()} GraphiQL</span>
+      <span> &copy; 2023 - GraphiQL</span>
       <div className={styles.devContainer}>
         {developers.map(({ name, href }) => (
           <a key={name} href={href} target="_blank" rel="noreferrer">
