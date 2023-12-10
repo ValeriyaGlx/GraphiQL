@@ -1,5 +1,5 @@
 .header {
-  margin-top: 30px;
+  padding-top: 30px;
   display: flex;
   justify-content: space-between;
 }
@@ -19,4 +19,7 @@
 
 .buttonsContainer a {
   font-size: 28px;
+  background-color: #ff05ea;
+  padding: 5px 10px;
+  color: #000;
 }

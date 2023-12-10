@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer.tsx';
 
 const Layout = () => {
   return (
-    <Container>
+    <Container sx={{ position: 'relative', minHeight: '100vh' }}>
       <Header />
       <main>
         <Outlet />
