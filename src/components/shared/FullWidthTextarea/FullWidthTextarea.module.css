@@ -1,0 +1,15 @@
+.textarea {
+  width: 100%;
+  height: 100%;
+  background-color: var(--violet-color);
+  border: none;
+  resize: none;
+  caret-color: white;
+  color: white;
+  padding: 10px;
+}
+
+.textarea:focus-visible {
+  outline: none;
+  border: var(--dark-grey-color) 1px solid;
+}

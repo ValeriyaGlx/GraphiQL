@@ -1,0 +1,13 @@
+.mainSection {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: var(--screen-color);
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  gap: 30px;
+  padding: 10px 0;
+  height: 94%;
+}

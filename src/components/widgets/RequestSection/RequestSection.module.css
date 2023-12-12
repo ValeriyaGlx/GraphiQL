@@ -1,0 +1,45 @@
+.requestSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--violet-color);
+  height: 100%;
+}
+
+.requestSection {
+  flex: 1;
+}
+
+.wrapperButtons {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: end;
+}
+
+.buttonDocs,
+.buttonPrettier {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.buttonPrettier {
+  margin-right: 5px;
+  display: block;
+  background-image: url("../../../assets/icons/prettiefier.svg");
+  width: 50px;
+  height: 53px;
+}
+
+.wrapperButtonPlay {
+  background-color: var(--pink-color);
+  display: inline-block;
+  padding: 2px;
+}
+
+.buttonPlay {
+  background-image: url("../../../assets/icons/play-icon.svg");
+  width: 40px;
+  height: 40px;
+}
