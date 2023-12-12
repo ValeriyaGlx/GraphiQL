@@ -1,0 +1,17 @@
+.docsSection {
+  display: flex;
+  gap: 10px;
+}
+
+.inputEndpoind {
+  background-color: var(--dark-grey-color);
+  width: 44.5%;
+}
+
+.buttonDocs {
+  background-image: url("../../../assets/icons/docs-icon.svg");
+  width: 35px;
+  height: 45px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
