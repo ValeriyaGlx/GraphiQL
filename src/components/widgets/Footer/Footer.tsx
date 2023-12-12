@@ -4,7 +4,6 @@ import styles from './Footer.module.css';
 
 const Footer = () => {
   const translation = useTranslation();
-
   return (
     <footer className={styles.footer}>
       <span> &copy; 2023 - GraphiQL</span>
