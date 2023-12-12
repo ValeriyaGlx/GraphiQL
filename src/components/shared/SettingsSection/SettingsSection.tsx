@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import { ThemeProvider, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
-import { useLanguage } from '../../../hooks';
 import type { Lang } from '../../../types';
 
 import { theme } from './SettingsSectionTheme';
@@ -14,12 +13,12 @@ type SettingsSectionProps = {
   inner: string;
   description: string;
   alignments: string[];
+  startValue: Lang | string;
   changeFunction: (language: Lang) => void;
 };
 
-const SettingsSection = ({ inner, description, alignments, changeFunction }: SettingsSectionProps) => {
-  const language = useLanguage();
-  const [alignment, setAlignment] = useState(language);
+const SettingsSection = ({ inner, description, alignments, changeFunction, startValue }: SettingsSectionProps) => {
+  const [alignment, setAlignment] = useState(startValue);
 
   const handleChange = (event: React.MouseEvent<HTMLElement>, newAlignment: Lang) => {
     if (newAlignment !== null) {
