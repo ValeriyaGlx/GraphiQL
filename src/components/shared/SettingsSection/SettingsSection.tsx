@@ -1,7 +1,5 @@
 import { type MouseEvent, useState } from 'react';
-import Box from '@mui/material/Box';
-import { ThemeProvider, ToggleButton, ToggleButtonGroup } from '@mui/material';
-import Typography from '@mui/material/Typography';
+import { ThemeProvider, ToggleButton, ToggleButtonGroup, Typography, Box } from '@mui/material';
 
 import type { Lang, languageToggleValue, Theme, themeToggleValue } from '../../../types';
 import { useLanguageDispatch } from '../../../hooks';
@@ -15,7 +13,7 @@ type SettingsSectionProps = {
   inner: string;
   description: string;
   alignments: languageToggleValue[] | themeToggleValue[];
-  startValue: Lang | Theme;
+  startValue: Theme | Lang;
 };
 
 const SettingsSection = ({ inner, description, alignments, startValue }: SettingsSectionProps) => {
@@ -24,14 +22,14 @@ const SettingsSection = ({ inner, description, alignments, startValue }: Setting
   const setLanguage = useLanguageDispatch();
   const setTheme = useThemeDispatch();
 
-  const handleChange = (event: MouseEvent<HTMLElement>, newAlignment: Lang | Theme) => {
+  const changeContext = (value: Theme | Lang) => {
+    value === LANG_EN || value === LANG_RU ? setLanguage(value) : setTheme(value);
+  };
+
+  const handleChange = (event: MouseEvent<HTMLElement>, newAlignment: Theme | Lang) => {
     if (newAlignment !== null) {
       setAlignment(newAlignment);
-      if (newAlignment === LANG_EN || newAlignment === LANG_RU) {
-        setLanguage(newAlignment);
-      } else {
-        setTheme(newAlignment);
-      }
+      changeContext(newAlignment);
     }
   };
 
