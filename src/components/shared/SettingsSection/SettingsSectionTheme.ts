@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material';
 
 export const theme = createTheme({
   typography: {
-    fontFamily: 'Inconsolata, monospace',
+    fontFamily: ['Inconsolata', 'Monospace'].join(','),
   },
   components: {
     MuiToggleButtonGroup: {
@@ -23,7 +23,10 @@ export const theme = createTheme({
     MuiToggleButton: {
       styleOverrides: {
         root: {
+          padding: '0 10px',
           textTransform: 'none',
+          fontWeight: 700,
+          fontSize: '16px',
           '&.Mui-selected': {
             color: 'white',
             backgroundColor: '#2f2746',
