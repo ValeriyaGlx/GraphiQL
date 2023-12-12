@@ -2,7 +2,7 @@ import { Divider, Box, Modal, Typography } from '@mui/material';
 
 import SettingsSection from '../../shared/SettingsSection/SettingsSection.tsx';
 import { useLanguage, useLanguageDispatch, useTranslation } from '../../../hooks';
-import type { Lang } from '../../../types';
+import type { Lang, Theme } from '../../../types';
 
 import styles from './SettingsModal.module.css';
 
@@ -16,7 +16,7 @@ const SettingsModal = ({ isOpen, handleClose }: SettingsModalProps) => {
   const setLanguage = useLanguageDispatch();
   const language = useLanguage();
 
-  const changeLanguage = (language: Lang) => setLanguage(language);
+  const changeLanguage = (value: Lang | Theme) => setLanguage(value as Lang);
 
   return (
     <div>
@@ -31,15 +31,15 @@ const SettingsModal = ({ isOpen, handleClose }: SettingsModalProps) => {
             startValue={language}
             inner={translation.languageSetting}
             description={translation.languageSettingDescription}
-            alignments={['En', 'Ru']}
+            alignments={translation.languageToggle}
             changeFunction={changeLanguage}
           />
           <Divider sx={{ borderColor: '#ababab' }} />
           <SettingsSection
-            startValue={'Dark'}
+            startValue={'dark'}
             inner={translation.themeSetting}
             description={translation.themeSettingDescription}
-            alignments={['Dark', 'Light']}
+            alignments={translation.themeToggle}
             changeFunction={() => {}}
           />
         </Box>

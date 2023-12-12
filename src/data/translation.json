@@ -15,7 +15,21 @@
     "languageSetting": "Language",
     "languageSettingDescription": "Choose the current language of the App",
     "themeSetting": "Theme",
-    "themeSettingDescription": "Adjust how the interface looks like"
+    "themeSettingDescription": "Adjust how the interface looks like",
+    "languageToggle": [
+      {
+        "name": "En",
+        "value": "en"
+      },
+      {
+        "name": "Ru",
+        "value": "ru"
+      }
+    ],
+    "themeToggle": [
+      { "name": "Dark", "value": "dark" },
+      { "name": "Light", "value": "light" }
+    ]
   },
   "ru": {
     "welcome": "Добро пожаловать в GraphiQL!",
@@ -33,6 +47,20 @@
     "languageSetting": "Язык",
     "languageSettingDescription": "Выберите текущий язык приложения",
     "themeSetting": "Тема",
-    "themeSettingDescription": "Настройте как будет выглядеть интерфейс"
+    "themeSettingDescription": "Настройте как будет выглядеть интерфейс",
+    "languageToggle": [
+      {
+        "name": "Англ",
+        "value": "en"
+      },
+      {
+        "name": "Рус",
+        "value": "ru"
+      }
+    ],
+    "themeToggle": [
+      { "name": "Темная", "value": "dark" },
+      { "name": "Светлая", "value": "light" }
+    ]
   }
 }
