@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <button className={styles.settings} onClick={handleOpen} />
+        <button className={[styles.settings, open ? styles.active : ''].join(' ')} onClick={handleOpen} />
         <div className={styles.buttonsContainer}>
           <Link to={'/sign-in'}>{translation.signin}</Link>
           <Link to={'/sign-up'}>{translation.signup}</Link>
