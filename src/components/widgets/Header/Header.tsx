@@ -9,19 +9,18 @@ import styles from './Header.module.css';
 const Header = () => {
   const translation = useTranslation();
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const toggleModal = () => setOpen(!open);
 
   return (
     <>
       <header className={styles.header}>
-        <button className={[styles.settings, open ? styles.active : ''].join(' ')} onClick={handleOpen} />
+        <button className={[styles.settings, open ? styles.active : ''].join(' ')} onClick={toggleModal} />
         <div className={styles.buttonsContainer}>
           <Link to={'/sign-in'}>{translation.signin}</Link>
           <Link to={'/sign-up'}>{translation.signup}</Link>
         </div>
       </header>
-      <SettingsModal isOpen={open} handleClose={handleClose} />
+      <SettingsModal isOpen={open} handleClose={toggleModal} />
     </>
   );
 };
