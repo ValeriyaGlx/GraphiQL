@@ -3,15 +3,17 @@ import { useState } from 'react';
 import FullWidthTextarea from '../../shared/FullWidthTextarea/FullWidthTextarea.tsx';
 import { useTranslation } from '../../../hooks';
 import ControlButton from '../../shared/ControlButton/ControlButton.tsx';
+import { HEADERS_EDITOR, VARIABLES_EDITOR } from '../../../constants/editors.ts';
+import type { EditorType } from '../../../types/editorType.ts';
 
 import styles from './CustomAccordion.module.css';
 
 const CustomAccordion = () => {
   const translation = useTranslation();
-  const [selectedDiv, setSelectedDiv] = useState<string>('Variables');
+  const [selectedDiv, setSelectedDiv] = useState<EditorType>(VARIABLES_EDITOR);
   const [visibleDiv, setVisibleDiv] = useState<boolean>(false);
 
-  const showDiv = (divName: string) => {
+  const showDiv = (divName: EditorType) => {
     setVisibleDiv(true);
     setSelectedDiv(divName);
   };
@@ -26,10 +28,14 @@ const CustomAccordion = () => {
         <div>
           <ControlButton
             label={translation.variables}
-            isActive={selectedDiv === 'Variables'}
-            onClick={() => showDiv('Variables')}
+            isActive={selectedDiv === VARIABLES_EDITOR}
+            onClick={() => showDiv(VARIABLES_EDITOR)}
           />
-          <ControlButton label={translation.headers} isActive={selectedDiv === 'Headers'} onClick={() => showDiv('Headers')} />
+          <ControlButton
+            label={translation.headers}
+            isActive={selectedDiv === HEADERS_EDITOR}
+            onClick={() => showDiv(HEADERS_EDITOR)}
+          />
           <button className={`${styles.buttonGroup} ${visibleDiv ? styles.visible : ''}`} onClick={toggleDiv}></button>
         </div>
       </div>
