@@ -35,7 +35,7 @@ const CustomAccordion = () => {
           >
             {translation.headers}
           </button>
-          <button className={`${styles.buttonGroup} ${visibleDiv ? styles.visible : ''}`} onClick={() => toggleDiv()}></button>
+          <button className={`${styles.buttonGroup} ${visibleDiv ? styles.visible : ''}`} onClick={toggleDiv}></button>
         </div>
       </div>
       {visibleDiv && (
