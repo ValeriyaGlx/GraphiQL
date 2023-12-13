@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
 import FullWidthTextarea from '../../shared/FullWidthTextarea/FullWidthTextarea.tsx';
+import { useTranslation } from '../../../hooks';
 
 import styles from './CustomAccordion.module.css';
 
 const CustomAccordion = () => {
+  const translation = useTranslation();
   const [selectedDiv, setSelectedDiv] = useState<string>('Variables');
   const [visibleDiv, setVisibleDiv] = useState<boolean>(false);
 
@@ -25,13 +27,13 @@ const CustomAccordion = () => {
             className={`${styles.buttonsControl} ${selectedDiv === 'Variables' ? styles.activeButton : ''}`}
             onClick={() => showDiv('Variables')}
           >
-            Variables
+            {translation.variables}
           </button>
           <button
             className={`${styles.buttonsControl} ${selectedDiv === 'Headers' ? styles.activeButton : ''}`}
             onClick={() => showDiv('Headers')}
           >
-            Headers
+            {translation.headers}
           </button>
           <button className={`${styles.buttonGroup} ${visibleDiv ? styles.visible : ''}`} onClick={() => toggleDiv()}></button>
         </div>
