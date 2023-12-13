@@ -1,7 +1,7 @@
 import styles from './FullWidthTextarea.module.css';
 
 interface FullWidthTextareaProps {
-  selectedDiv: string;
+  selectedDiv?: string;
 }
 
 const FullWidthTextarea = ({ selectedDiv }: FullWidthTextareaProps) => {
