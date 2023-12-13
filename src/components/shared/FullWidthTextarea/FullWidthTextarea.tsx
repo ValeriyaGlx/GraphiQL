@@ -7,7 +7,7 @@ interface FullWidthTextareaProps {
 const FullWidthTextarea = ({ selectedDiv }: FullWidthTextareaProps) => {
   return (
     <div className={styles.wrapperTextarea}>
-      <textarea className={styles.textarea} value={selectedDiv} />
+      <textarea className={styles.textarea} placeholder={selectedDiv} />
     </div>
   );
 };
