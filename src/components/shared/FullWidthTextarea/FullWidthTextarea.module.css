@@ -11,5 +11,4 @@
 
 .textarea:focus-visible {
   outline: none;
-  border: var(--dark-grey-color) 1px solid;
 }

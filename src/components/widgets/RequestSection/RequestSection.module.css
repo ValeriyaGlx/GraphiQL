@@ -11,6 +11,8 @@
 }
 
 .wrapperButtons {
+  position: relative;
+  height: 100%;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -25,6 +27,8 @@
 }
 
 .buttonPrettier {
+  position: absolute;
+  top: 100px;
   margin-right: 5px;
   display: block;
   background-image: url("../../../assets/icons/prettiefier.svg");
@@ -33,6 +37,7 @@
 }
 
 .wrapperButtonPlay {
+  position: absolute;
   background-color: var(--pink-color);
   display: inline-block;
   padding: 2px;
@@ -42,4 +47,9 @@
   background-image: url("../../../assets/icons/play-icon.svg");
   width: 40px;
   height: 40px;
+}
+
+.textarea {
+  width: 100%;
+  height: 100%;
 }

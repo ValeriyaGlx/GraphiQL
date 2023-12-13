@@ -1,11 +1,10 @@
-import type React from 'react';
 import { useState } from 'react';
 
 import FullWidthTextarea from '../../shared/FullWidthTextarea/FullWidthTextarea.tsx';
 
 import styles from './CustomAccordion.module.css';
 
-const CustomAccordion: React.FC = () => {
+const CustomAccordion = () => {
   const [selectedDiv, setSelectedDiv] = useState<string>('Variables');
   const [visibleDiv, setVisibleDiv] = useState<boolean>(false);
 
