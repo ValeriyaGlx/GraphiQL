@@ -1,6 +1,7 @@
-import TextField from '@mui/material/TextField';
+import { TextField, ThemeProvider } from '@mui/material';
 
 import { useTranslation } from '../../../hooks';
+import { themeInput } from '../../../utils/themeInput/themeInput.ts';
 
 import styles from './DocsSection.module.css';
 
@@ -9,13 +10,16 @@ const DocsSection = () => {
   return (
     <div className={styles.docsSection}>
       <button className={styles.buttonDocs} />
-      <TextField
-        className={styles.inputEndpoind}
-        label={translation.endpoint}
-        id="filled-size-small"
-        variant="filled"
-        size="small"
-      />
+      <ThemeProvider theme={themeInput}>
+        <TextField
+          className={styles.inputEndpoind}
+          label={translation.endpoint}
+          id="filled-size-small"
+          variant="filled"
+          size="small"
+          color="secondary"
+        />
+      </ThemeProvider>
     </div>
   );
 };
