@@ -3,8 +3,8 @@ import { useState } from 'react';
 import FullWidthTextarea from '../../shared/FullWidthTextarea/FullWidthTextarea.tsx';
 import { useTranslation } from '../../../hooks';
 import ControlButton from '../../shared/ControlButton/ControlButton.tsx';
-import { HEADERS_EDITOR, VARIABLES_EDITOR } from '../../../constants/editors.ts';
-import type { EditorType } from '../../../types/editorType.ts';
+import { HEADERS_EDITOR, VARIABLES_EDITOR } from '../../../constants';
+import type { EditorType } from '../../../types';
 
 import styles from './CustomAccordion.module.css';
 
