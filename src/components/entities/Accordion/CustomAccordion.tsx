@@ -4,16 +4,16 @@ import FullWidthTextarea from '../../shared/FullWidthTextarea/FullWidthTextarea.
 import { useTranslation } from '../../../hooks';
 import ControlButton from '../../shared/ControlButton/ControlButton.tsx';
 import { HEADERS_EDITOR, VARIABLES_EDITOR } from '../../../constants';
-import type { EditorType } from '../../../types';
+import type { Editor } from '../../../types';
 
 import styles from './CustomAccordion.module.css';
 
 const CustomAccordion = () => {
   const translation = useTranslation();
-  const [selectedDiv, setSelectedDiv] = useState<EditorType>(VARIABLES_EDITOR);
+  const [selectedDiv, setSelectedDiv] = useState<Editor>(VARIABLES_EDITOR);
   const [visibleDiv, setVisibleDiv] = useState<boolean>(false);
 
-  const showDiv = (divName: EditorType) => {
+  const showDiv = (divName: Editor) => {
     setVisibleDiv(true);
     setSelectedDiv(divName);
   };
