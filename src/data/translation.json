@@ -29,7 +29,9 @@
     "themeToggle": [
       { "name": "Dark", "value": "dark" },
       { "name": "Light", "value": "light" }
-    ]
+    ],
+    "submit": "Submit",
+    "placeholders": ["Enter Email", "Enter Password", "Confirm Password"]
   },
   "ru": {
     "welcome": "Добро пожаловать в GraphiQL!",
@@ -61,6 +63,8 @@
     "themeToggle": [
       { "name": "Темная", "value": "dark" },
       { "name": "Светлая", "value": "light" }
-    ]
+    ],
+    "submit": "Отправить",
+    "placeholders": ["Введите Эл. почту", "Введите Пароль", "Повторите Пароль"]
   }
 }

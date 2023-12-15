@@ -1,7 +1,9 @@
 import type { UseFormRegister } from 'react-hook-form';
-import { Input } from '@mui/material';
+import { TextField } from '@mui/material';
 
 import type { InputProps, Validation } from '../../../types';
+
+import styles from './InputValidation.module.css';
 
 interface InputValidationProps extends InputProps {
   error: string | undefined;
@@ -10,10 +12,17 @@ interface InputValidationProps extends InputProps {
 
 const InputValidation = ({ placeholder, inputName, type, error, register }: InputValidationProps) => {
   return (
-    <div className={''}>
+    <div className={styles.container}>
       {/*<ThemeProvider theme={themeInput}>*/}
-      <Input error={!!error} placeholder={placeholder} type={type} {...register(inputName)} />
-      <span>{error}</span>
+      <TextField
+        className={styles.input}
+        variant="outlined"
+        error={!!error}
+        placeholder={placeholder}
+        type={type}
+        {...register(inputName)}
+      />
+      <span className={styles.error}>{error}</span>
       {/*</ThemeProvider>*/}
     </div>
   );
