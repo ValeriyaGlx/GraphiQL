@@ -1,4 +1,8 @@
-.docsSection {
+.MuiPaper-elevation {
+  position: absolute;
+}
+
+.docsWrapper {
   display: flex;
   gap: 10px;
 }
@@ -10,9 +14,18 @@
 
 .buttonDocs {
   background-image: url("../../../assets/icons/docs-icon.svg");
-  width: 35px;
+  width: 50px;
   height: 45px;
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.buttonDocsOpen {
+  background-image: url("../../../assets/icons/bookOpen.svg");
+  width: 50px;
+  height: 45px;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
