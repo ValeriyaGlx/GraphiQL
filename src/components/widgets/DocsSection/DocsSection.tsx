@@ -1,12 +1,11 @@
-import { TextField, ThemeProvider, CircularProgress } from '@mui/material';
-import { useState, lazy, Suspense } from 'react';
+import { TextField, ThemeProvider } from '@mui/material';
+import { useState } from 'react';
 
 import { useTranslation } from '../../../hooks';
 import { themeInput } from '../../../utils/themeInput/themeInput';
+import DocumentationExplorer from '../../features/DocumentationExplorer/DocumentationExplorer';
 
 import styles from './DocsSection.module.css';
-
-const DocumentationExplorer = lazy(() => import('../../features/DocumentationExplorer/DocumentationExplorer'));
 
 const DocsSection = () => {
   const translation = useTranslation();
@@ -31,10 +30,7 @@ const DocsSection = () => {
           />
         </ThemeProvider>
       </div>
-
-      <Suspense fallback={<CircularProgress />}>
-        <DocumentationExplorer onclose={() => setShowDocumentation(false)} showDocumentation={showDocumentation} />
-      </Suspense>
+      <DocumentationExplorer onclose={() => setShowDocumentation(false)} showDocumentation={showDocumentation} />
     </div>
   );
 };

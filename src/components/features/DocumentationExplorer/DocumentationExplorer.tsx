@@ -1,8 +1,11 @@
-import { Drawer, Divider } from '@mui/material';
+import { Drawer } from '@mui/material';
+import { lazy, Suspense } from 'react';
 
-import { useTranslation } from '../../../hooks';
+import Loading from '../../shared/Loading/Loading';
 
 import styles from './DocumentationExplorer.module.css';
+
+const ListOfDocumentation = lazy(() => import('../../entities/ListOfDocumentation/ListOfDocumentation'));
 
 type DocumentationExplorerProps = {
   showDocumentation: boolean;
@@ -10,8 +13,6 @@ type DocumentationExplorerProps = {
 };
 
 const DocumentationExplorer = ({ showDocumentation, onclose }: DocumentationExplorerProps) => {
-  const translation = useTranslation();
-
   return (
     <Drawer
       variant="persistent"
@@ -28,8 +29,11 @@ const DocumentationExplorer = ({ showDocumentation, onclose }: DocumentationExpl
     >
       <div className={styles.wrapper}>
         <button className={styles.close} onClick={onclose} />
-        <h2 className={styles.title}>{translation.documentationExplorer}</h2>
-        <Divider />
+        {showDocumentation && (
+          <Suspense fallback={<Loading marginTop={'30'} />}>
+            <ListOfDocumentation />
+          </Suspense>
+        )}
       </div>
     </Drawer>
   );
