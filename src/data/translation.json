@@ -86,7 +86,8 @@
         "title": "Sign Up Failed!",
         "text": "Maybe you’re already registered.\nPlease, recheck your data and try again"
       }
-    }
+    },
+    "documentationExplorer": "Documentation Explorer"
   },
   "ru": {
     "welcome": "Добро пожаловать в GraphiQL!",
@@ -175,6 +176,7 @@
         "title": "Ошибка регистрации!",
         "text": "Возможно, вы уже зарегистрированы.\nПожалуйста, проверьте данные и попробуйте снова"
       }
-    }
+    },
+    "documentationExplorer": "Обозреватель документации"
   }
 }
