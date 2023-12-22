@@ -6,14 +6,11 @@ import { themeInput } from '../../../utils/themeInput/themeInput';
 
 import styles from './DocsSection.module.css';
 
-const DocumentationExplorer = lazy(() => import('../../features/DocumentationExplorer/DocumentationExplorer.tsx'));
+const DocumentationExplorer = lazy(() => import('../../features/DocumentationExplorer/DocumentationExplorer'));
 
 const DocsSection = () => {
   const translation = useTranslation();
   const [showDocumentation, setShowDocumentation] = useState(false);
-  const handleToggleDrawer = (isOpen: boolean) => () => {
-    setShowDocumentation(isOpen);
-  };
 
   return (
     <div className={styles.docsSection}>
@@ -36,7 +33,7 @@ const DocsSection = () => {
       </div>
 
       <Suspense fallback={<CircularProgress />}>
-        <DocumentationExplorer onclose={handleToggleDrawer(false)} showDocumentation={showDocumentation} />
+        <DocumentationExplorer onclose={() => setShowDocumentation(false)} showDocumentation={showDocumentation} />
       </Suspense>
     </div>
   );
