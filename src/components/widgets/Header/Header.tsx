@@ -19,16 +19,11 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
   const toggleModal = () => setOpen(!open);
-  const [user, loading] = useAuthState(auth);
-  const [isLoading, setLoading] = useState(true);
+  const [user] = useAuthState(auth);
 
   const handleClose = () => {
     signOut(auth);
   };
-
-  useEffect(() => {
-    setLoading(loading);
-  }, [loading]);
 
   useEffect(() => {
     window.addEventListener('scroll', isSticky);
@@ -74,8 +69,9 @@ const Header = () => {
             <button className={[styles.settings, open ? styles.active : ''].join(' ')} onClick={toggleModal} />
           </Box>
           <Toolbar className={styles.buttonsContainer} sx={{ display: { xs: 'none', sm: 'flex' } }}>
-            {!isLoading &&
-              buttons.map(({ value, to, func }) => <NavigationButton key={value} value={value} to={to} func={func} />)}
+            {buttons.map(({ value, to, func }) => (
+              <NavigationButton key={value} value={value} to={to} func={func} />
+            ))}
           </Toolbar>
           <BurgerMenu buttons={buttons} />
         </Container>
