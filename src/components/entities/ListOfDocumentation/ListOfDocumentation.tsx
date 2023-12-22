@@ -1,7 +1,7 @@
 import { Divider } from '@mui/material';
 
-import styles from '../../features/DocumentationExplorer/DocumentationExplorer.module.css';
 import { useTranslation } from '../../../hooks';
+import styles from '../../features/DocumentationExplorer/DocumentationExplorer.module.css';
 
 const ListOfDocumentation = () => {
   const translation = useTranslation();
