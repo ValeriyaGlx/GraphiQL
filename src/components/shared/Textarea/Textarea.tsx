@@ -1,10 +1,10 @@
-import styles from './FullWidthTextarea.module.css';
+import styles from './Textarea.module.css';
 
 interface FullWidthTextareaProps {
   selectedDiv?: string;
 }
 
-const FullWidthTextarea = ({ selectedDiv }: FullWidthTextareaProps) => {
+const Textarea = ({ selectedDiv }: FullWidthTextareaProps) => {
   return (
     <div className={styles.wrapperTextarea}>
       <textarea className={styles.textarea} placeholder={selectedDiv} />
@@ -12,4 +12,4 @@ const FullWidthTextarea = ({ selectedDiv }: FullWidthTextareaProps) => {
   );
 };
 
-export default FullWidthTextarea;
+export default Textarea;
