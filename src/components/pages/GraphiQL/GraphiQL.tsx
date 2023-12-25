@@ -10,13 +10,12 @@ import ResponseSection from '../../widgets/ResponseSection/ResponseSection';
 import styles from './GraphiQL.module.css';
 
 const GraphiQL = () => {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (loading) return;
     if (!user) navigate('/', { replace: true });
-  }, [user, loading, navigate]);
+  }, [user, navigate]);
 
   return (
     <div className={styles.mainSection}>
