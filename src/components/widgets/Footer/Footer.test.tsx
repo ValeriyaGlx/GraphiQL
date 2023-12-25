@@ -1,13 +1,14 @@
-import { describe, expect, it, test } from 'vitest';
-import { screen } from '@testing-library/react';
-
-import renderWithRouterAndProvider from '../../../../tests/utils/renderWithRouter';
+import { beforeEach, describe, expect, test } from 'vitest';
+import { render, screen } from '@testing-library/react';
 
 import Footer from './Footer';
 
 describe('Footer', () => {
+  beforeEach(() => {
+    render(<Footer />);
+  });
+
   test('contains the links to the authors GitHub', () => {
-    renderWithRouterAndProvider(<Footer />);
     const linkNames = ['Valeriia Galakhova', 'Maria Stroich', 'Aliaksei Krutsko'];
 
     linkNames.forEach((name) => {
@@ -15,8 +16,7 @@ describe('Footer', () => {
       expect(link).toBeInTheDocument();
     });
   });
-  it('has the year the application was created', () => {
-    renderWithRouterAndProvider(<Footer />);
+  test('has the year the application was created', () => {
     const yearElement = screen.getByText(/^© 2023 - GraphiQL$/);
     expect(yearElement).toBeInTheDocument();
   });
