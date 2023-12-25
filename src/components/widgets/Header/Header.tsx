@@ -65,7 +65,11 @@ const Header = () => {
 
   return (
     <>
-      <AppBar className={styles.header} sx={{ bgcolor: sticky ? 'secondary.main' : 'none', boxShadow: sticky ? 2 : 'none' }}>
+      <AppBar
+        data-testid="header"
+        className={styles.header}
+        sx={{ bgcolor: sticky ? 'secondary.main' : 'none', boxShadow: sticky ? 2 : 'none' }}
+      >
         <Container sx={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center' }}>
           <Box sx={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
             <Link className={styles.welcome} to={'/'} />
