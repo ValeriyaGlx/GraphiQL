@@ -1,3 +1,5 @@
+import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+
 import styles from './Textarea.module.css';
 
 interface FullWidthTextareaProps {
@@ -7,7 +9,7 @@ interface FullWidthTextareaProps {
 const Textarea = ({ selectedDiv }: FullWidthTextareaProps) => {
   return (
     <div className={styles.wrapperTextarea}>
-      <textarea className={styles.textarea} placeholder={selectedDiv} />
+      <TextareaAutosize minRows={8} className={styles.textarea} placeholder={selectedDiv} />
     </div>
   );
 };
