@@ -1,6 +1,8 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
+import { mockDevs } from '../../../../tests/mocks/mockDevs';
+
 import Footer from './Footer';
 
 describe('Footer', () => {
@@ -9,9 +11,7 @@ describe('Footer', () => {
   });
 
   test('contains the links to the authors GitHub', () => {
-    const linkNames = ['Valeriia Galakhova', 'Maria Stroich', 'Aliaksei Krutsko'];
-
-    linkNames.forEach((name) => {
+    mockDevs.forEach((name) => {
       const link = screen.getByRole('link', { name });
       expect(link).toBeInTheDocument();
     });
