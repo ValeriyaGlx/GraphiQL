@@ -46,6 +46,19 @@ describe('Sign In', () => {
 
     const submitElement = screen.getByText(/submit/i);
     await userEvent.click(submitElement);
-    expect(signInWithEmailAndPassword).toHaveBeenCalled();
+    expect(vi.mocked(signInWithEmailAndPassword)).toHaveBeenCalled();
+  });
+  test('handles sign-in error and shows notification', async () => {
+    vi.mocked(signInWithEmailAndPassword).mockRejectedValueOnce(new Error('Authentication failed'));
+
+    const emailInput = screen.getByPlaceholderText(/Enter Email/i);
+    const passwordInput = screen.getByPlaceholderText(/Enter Password/i);
+
+    await userEvent.type(emailInput, mockRightEmail);
+    await userEvent.type(passwordInput, mockRightPassword);
+
+    const submitElement = screen.getByText(/submit/i);
+    await userEvent.click(submitElement);
+    expect(screen.queryByText(/Log In Failed!/i)).toBeInTheDocument();
   });
 });
