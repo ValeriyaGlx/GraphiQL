@@ -1,3 +1,5 @@
+import type { errorMessagePrettifying } from '../types';
+
 class PrettifyingService {
   whitespace: number;
 
@@ -12,25 +14,57 @@ class PrettifyingService {
     return result.split('\n').join('');
   }
 
-  public formatQuery(query: string): string {
-    const queryWithoutEmptyLines = this.removeEmptyLinesAndParagraphs(query);
-    let result = '';
-    let indentationLevel = 0;
+  private checkBracketsValidity(query: string): boolean | string {
+    const stack: string[] = [];
 
-    for (let i = 0; i < queryWithoutEmptyLines.length; i++) {
-      const char = queryWithoutEmptyLines[i];
-
-      if (char === '{') {
-        indentationLevel++;
-        result += '{\n' + '  '.repeat(indentationLevel);
-      } else if (char === '}') {
-        indentationLevel--;
-        result += '\n' + '  '.repeat(indentationLevel) + '}';
-      } else {
-        result += char;
+    for (const el of query) {
+      if (el === '{') {
+        stack.push('{');
+      } else if (el === '}') {
+        if (stack.length === 0 || stack.pop() !== '{') {
+          return '}';
+        }
       }
     }
-    return result;
+
+    if (stack.length > 0) {
+      return '{';
+    }
+
+    return true;
+  }
+
+  public formatQuery(query: string, errorMessage: errorMessagePrettifying): string | Array<string> {
+    try {
+      const validationResult = this.checkBracketsValidity(query);
+      if (typeof validationResult === 'string') {
+        throw new Error(validationResult);
+      }
+      const queryWithoutEmptyLines = this.removeEmptyLinesAndParagraphs(query);
+      let result = '';
+      let indentationLevel = 0;
+
+      for (let i = 0; i < queryWithoutEmptyLines.length; i++) {
+        const char = queryWithoutEmptyLines[i];
+
+        if (char === '{') {
+          indentationLevel++;
+          result += '{\n' + '  '.repeat(indentationLevel);
+        } else if (char === '}') {
+          indentationLevel--;
+          result += '\n' + '  '.repeat(indentationLevel) + '}';
+        } else {
+          result += char;
+        }
+      }
+      return result;
+    } catch (error) {
+      if ((error as Error).message === '{') {
+        return [errorMessage.textOpeningParenthesis];
+      } else {
+        return [errorMessage.textClosingParenthesis];
+      }
+    }
   }
 }
 
