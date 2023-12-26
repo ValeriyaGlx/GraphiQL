@@ -45,16 +45,18 @@ class PrettifyingService {
       let indentationLevel = 0;
 
       for (let i = 0; i < queryWithoutEmptyLines.length; i++) {
-        const char = queryWithoutEmptyLines[i];
+        const el = queryWithoutEmptyLines[i];
 
-        if (char === '{') {
+        if (el === '{') {
           indentationLevel++;
           result += '{\n' + '  '.repeat(indentationLevel);
-        } else if (char === '}') {
+        } else if (el === '}') {
           indentationLevel--;
           result += '\n' + '  '.repeat(indentationLevel) + '}';
+        } else if (el === ',') {
+          result += ',' + '\n' + '  '.repeat(indentationLevel);
         } else {
-          result += char;
+          result += el;
         }
       }
       return result;
