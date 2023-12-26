@@ -15,7 +15,7 @@ export default defineConfig({
       enabled: true,
       all: true,
       include: ['src'],
-      exclude: ['src/main.tsx', 'src/app', 'src/tests', '**/*.d.ts'],
+      exclude: ['src/main.tsx', 'src/app', 'src/tests', '**/*.d.ts', 'src/types/'],
       provider: 'v8',
       reporter: ['text'],
       thresholds: {
