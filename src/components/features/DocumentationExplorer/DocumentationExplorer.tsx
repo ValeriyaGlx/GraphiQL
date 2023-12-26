@@ -1,7 +1,7 @@
 import { Drawer } from '@mui/material';
 import { lazy, Suspense } from 'react';
 
-import LoaderSmall from '../../shared/LoaderSmall/LoaderSmall.tsx';
+import LoaderSmall from '../../shared/LoaderSmall/LoaderSmall';
 
 import styles from './DocumentationExplorer.module.css';
 

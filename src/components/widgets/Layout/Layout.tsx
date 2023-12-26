@@ -7,7 +7,7 @@ import { auth } from '../../../firebase/firebase';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import ThemeSwitcher from '../../../utils/themeSwitcher/ThemeSwitcher';
-import LoaderBig from '../../shared/LoaderBig/LoaderBig.tsx';
+import LoaderBig from '../../shared/LoaderBig/LoaderBig';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 
 const Layout = () => {

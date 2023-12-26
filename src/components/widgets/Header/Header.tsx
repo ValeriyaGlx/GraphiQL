@@ -10,7 +10,7 @@ import { SCROLL_DOWN } from '../../../constants';
 import type { HeaderButton } from '../../../types';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import NavigationButton from '../../shared/NavigationButton/NavigationButton';
-import { selectAuth } from '../../../store/slices/userSlice.ts';
+import { selectAuth } from '../../../store/slices/userSlice';
 
 import styles from './Header.module.css';
 
