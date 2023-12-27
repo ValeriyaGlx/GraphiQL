@@ -13,7 +13,7 @@ class PrettifyingService {
     return lines.replace(/\s+/g, ',');
   }
 
-  private checkBracketsValidity(query: string): boolean | string {
+  private checkBracketsValidity(query: string): string {
     const stack: string[] = [];
 
     for (const el of query) {
@@ -30,7 +30,7 @@ class PrettifyingService {
       return '{';
     }
 
-    return true;
+    return '';
   }
 
   public formatJSON(query: string) {
@@ -74,7 +74,7 @@ class PrettifyingService {
   public formatQuery(query: string, errorMessage: errorMessagePrettifying): string | Array<string> {
     try {
       const validationResult = this.checkBracketsValidity(query);
-      if (typeof validationResult === 'string') {
+      if (validationResult.length > 0) {
         throw new Error(validationResult);
       }
       return this.formatJSON(query);
