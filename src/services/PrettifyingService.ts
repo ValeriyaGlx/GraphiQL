@@ -8,10 +8,8 @@ class PrettifyingService {
   }
 
   private removeEmptyLinesAndParagraphs(query: string): string {
-    const lines = query.split(' ');
-    const nonEmptyLines = lines.filter((line) => line.trim() !== '');
-    const result = nonEmptyLines.join('');
-    return result.split('\n').join('');
+    const lines = query.replace(/\s*([{}():])\s*/g, '$1');
+    return lines.replace(/\s+/g, ',');
   }
 
   private checkBracketsValidity(query: string): boolean | string {
@@ -38,19 +36,30 @@ class PrettifyingService {
     const queryWithoutEmptyLines = this.removeEmptyLinesAndParagraphs(query);
     let result = '';
     let indentationLevel = 0;
+    for (const el of queryWithoutEmptyLines) {
+      switch (el) {
+        case '{':
+        case '[':
+          indentationLevel++;
+          result += ` ${el}\n${'  '.repeat(indentationLevel)}`;
+          break;
 
-    for (let i = 0; i < queryWithoutEmptyLines.length; i++) {
-      const el = queryWithoutEmptyLines[i];
-      if (el === '{' || el === '[') {
-        indentationLevel++;
-        result += `${el}\n` + '  '.repeat(indentationLevel);
-      } else if (el === '}' || el === ']') {
-        indentationLevel--;
-        result += '\n' + '  '.repeat(indentationLevel) + el;
-      } else if (el === ',') {
-        result += ',' + '\n' + '  '.repeat(indentationLevel);
-      } else {
-        result += el;
+        case '}':
+        case ']':
+          indentationLevel--;
+          result += `\n${'  '.repeat(indentationLevel)}${el}`;
+          break;
+
+        case ',':
+          result += `\n${'  '.repeat(indentationLevel)}`;
+          break;
+
+        default:
+          if (result.endsWith('}')) {
+            result += `\n${'  '.repeat(indentationLevel)}${el}`;
+          } else {
+            result += el;
+          }
       }
     }
 
