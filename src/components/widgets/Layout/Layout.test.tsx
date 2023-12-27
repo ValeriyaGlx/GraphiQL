@@ -1,21 +1,24 @@
-import { beforeEach, describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 import { screen } from '@testing-library/react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 import renderWithRouterAndProvider from '../../../../tests/utils/renderWithRouter';
+import { loadingState, notLoadingState } from '../../../../tests/mocks';
 
 import Layout from './Layout';
 
-describe('Layout', () => {
-  beforeEach(() => {
-    renderWithRouterAndProvider(<Layout />);
-  });
+vi.mock('react-firebase-hooks/auth');
 
-  test('renders LoaderBig while loading', () => {
+describe('Layout', () => {
+  test('renders LoaderBig while loading', async () => {
+    vi.mocked(useAuthState).mockReturnValue(loadingState);
+    await renderWithRouterAndProvider(<Layout />);
     const loaderElement = screen.getByTestId('big-loader');
     expect(loaderElement).toBeInTheDocument();
   });
 
   test('renders Header and Footer when not loading', async () => {
+    vi.mocked(useAuthState).mockReturnValue(notLoadingState);
     await renderWithRouterAndProvider(<Layout />);
     const headerElement = screen.getByTestId('header');
     expect(headerElement).toBeInTheDocument();

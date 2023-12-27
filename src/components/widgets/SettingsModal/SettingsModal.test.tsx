@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, test, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { userEvent } from '@testing-library/user-event';
 
 import SettingsContext from '../../../contexts/SettingsContext';
 
@@ -21,14 +22,10 @@ describe('Settings Modal', () => {
     const themeElement = screen.queryByText(/theme/i);
     expect(themeElement).toBeInTheDocument();
   });
-  test('is able to change language', () => {
-    const changeLanguageButton = screen.queryByText(/ru/i);
+  test('is able to change language', async () => {
+    const changeLanguageButton = screen.getByText(/ru/i);
 
-    if (changeLanguageButton) {
-      fireEvent.click(changeLanguageButton);
-    } else {
-      console.error('The "ru" button was not found.');
-    }
+    await userEvent.click(changeLanguageButton);
 
     const settingsElementEn = screen.queryByText(/settings/i);
     expect(settingsElementEn).not.toBeInTheDocument();
