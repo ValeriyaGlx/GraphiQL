@@ -54,6 +54,10 @@ class PrettifyingService {
           result += `\n${'  '.repeat(indentationLevel)}`;
           break;
 
+        case ':':
+          result += `${el} `;
+          break;
+
         default:
           if (result.endsWith('}')) {
             result += `\n${'  '.repeat(indentationLevel)}${el}`;
