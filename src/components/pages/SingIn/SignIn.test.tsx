@@ -3,9 +3,9 @@ import { screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
-import renderWithRouterAndProvider from '../../../../tests/utils/renderWithRouter';
 import { SingIn } from '../index';
-import { mockRightEmail, mockRightPassword } from '../../../../tests/mocks';
+import renderWithRouterAndProvider from '../../../tests/utils/renderWithRouter';
+import { mockRightEmail, mockRightPassword } from '../../../tests/mocks';
 
 vi.mock('firebase/auth');
 

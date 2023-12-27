@@ -1,9 +1,9 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import { screen } from '@testing-library/react';
 
-import renderWithRouterAndProvider from '../../../../tests/utils/renderWithRouter';
 import { Welcome } from '../index';
-import { mockDevs } from '../../../../tests/mocks/mockDevs';
+import renderWithRouterAndProvider from '../../../tests/utils/renderWithRouter';
+import { mockDevs } from '../../../tests/mocks';
 
 describe('Welcome', () => {
   beforeEach(() => {

@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import { screen } from '@testing-library/react';
 
-import renderWithRouterAndProvider from '../../../../tests/utils/renderWithRouter';
 import { PageNotFound } from '../index';
+import renderWithRouterAndProvider from '../../../tests/utils/renderWithRouter';
 
 describe('404', () => {
   beforeEach(() => {

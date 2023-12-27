@@ -2,8 +2,8 @@ import { describe, expect, test, vi } from 'vitest';
 import { screen } from '@testing-library/react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
-import renderWithRouterAndProvider from '../../../../tests/utils/renderWithRouter';
-import { loadingState, notLoadingState } from '../../../../tests/mocks';
+import { loadingState, notLoadingState } from '../../../tests/mocks';
+import renderWithRouterAndProvider from '../../../tests/utils/renderWithRouter';
 
 import Layout from './Layout';
 

@@ -4,9 +4,9 @@ import { userEvent } from '@testing-library/user-event';
 import { vi } from 'vitest';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-import renderWithRouterAndProvider from '../../../../tests/utils/renderWithRouter';
 import { SignUp } from '../index';
-import { mockRightEmail, mockRightPassword } from '../../../../tests/mocks';
+import renderWithRouterAndProvider from '../../../tests/utils/renderWithRouter';
+import { mockRightEmail, mockRightPassword } from '../../../tests/mocks';
 
 vi.mock('firebase/auth');
 

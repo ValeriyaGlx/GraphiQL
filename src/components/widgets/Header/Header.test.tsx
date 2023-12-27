@@ -2,8 +2,8 @@ import { beforeEach, describe, expect, test } from 'vitest';
 import { screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 
-import renderWithRouterAndProvider, { mockStore } from '../../../../tests/utils/renderWithRouter';
 import { setAuth } from '../../../store/slices/userSlice';
+import renderWithRouterAndProvider, { mockStore } from '../../../tests/utils/renderWithRouter';
 
 import Header from './Header';
 

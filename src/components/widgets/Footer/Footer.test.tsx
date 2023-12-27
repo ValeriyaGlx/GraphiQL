@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
-import { mockDevs } from '../../../../tests/mocks/mockDevs';
+import { mockDevs } from '../../../tests/mocks';
 
 import Footer from './Footer';
 

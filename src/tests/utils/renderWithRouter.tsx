@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 
-import { store } from '../../src/store/store';
+import { store } from '../../store/store';
 
 export const mockStore = { ...store };
 
