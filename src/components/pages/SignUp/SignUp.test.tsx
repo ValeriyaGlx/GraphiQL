@@ -55,6 +55,6 @@ describe('Sign Up', () => {
 
     const submitElement = screen.getByText(/submit/i);
     await userEvent.click(submitElement);
-    expect(screen.queryByText(/Sign Up Failed!/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Signup Failed!/i)).toBeInTheDocument();
   });
 });
