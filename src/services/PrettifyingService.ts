@@ -1,4 +1,5 @@
 import type { errorMessagePrettifying } from '../types';
+import { INDENTATION_LEVEL } from '../constants';
 
 class PrettifyingService {
   whitespace: number;
@@ -87,6 +88,6 @@ class PrettifyingService {
   }
 }
 
-const prettifyingService = new PrettifyingService(2);
+const prettifyingService = new PrettifyingService(INDENTATION_LEVEL);
 
 export default prettifyingService;

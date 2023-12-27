@@ -16,13 +16,12 @@ const responseDataSlice = createSlice({
   initialState,
   reducers: {
     updateResponseData: (state, action: PayloadAction<string>) => {
-      const newData = prettifyingService.formatJSON(action.payload);
-      state.ResponseData = newData;
+      state.ResponseData = prettifyingService.formatJSON(action.payload);
     },
   },
 });
 
-export const responseDataValue = (state: RootState) => state.responseData.ResponseData;
+export const selectResponseData = (state: RootState) => state.responseData.ResponseData;
 
 export const { updateResponseData } = responseDataSlice.actions;
 export const responseReducer = responseDataSlice.reducer;

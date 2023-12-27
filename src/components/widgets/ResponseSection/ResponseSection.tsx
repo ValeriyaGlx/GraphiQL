@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
 
-import { responseDataValue } from '../../../store/slices/responseSlice';
+import { selectResponseData } from '../../../store/slices/responseSlice';
 
 import styles from './ResponseSection.module.css';
 
 const ResponseSection = () => {
-  const responseData = useSelector(responseDataValue);
+  const responseData = useSelector(selectResponseData);
 
   return (
     <div className={styles.responseSection}>
