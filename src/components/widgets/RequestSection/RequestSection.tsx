@@ -7,7 +7,7 @@ import prettifyingService from '../../../services/PrettifyingService';
 import { useTranslation } from '../../../hooks';
 import TostifyMessage from '../../shared/TostifyMessage/TostifyMessage';
 import TostifyComponent from '../../shared/TostifyComponent/TostifyComponent';
-import { useActions } from '../../../hooks/useActions.ts';
+import { useActions } from '../../../hooks/useActions';
 
 import styles from './RequestSection.module.css';
 
@@ -22,7 +22,7 @@ const test = {
 const RequestSection = () => {
   const translation = useTranslation();
   const { updateResponseData } = useActions();
-  const [query, setQuery] = useState<string>('');
+  const [query, setQuery] = useState('');
   const handleButtonPrettierClick = () => {
     const { prettifyingFailed } = translation.notifications;
     const newQuery = prettifyingService.formatQuery(query, prettifyingFailed);
