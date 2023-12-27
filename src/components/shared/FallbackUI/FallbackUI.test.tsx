@@ -10,7 +10,6 @@ describe('FallbackUI', () => {
   });
 
   test('has button to refresh page', () => {
-    screen.debug();
     expect(screen.getByText('Refresh')).toBeInTheDocument();
   });
 
