@@ -4,11 +4,11 @@ import type { RootState } from '../store';
 import prettifyingService from '../../services/PrettifyingService';
 
 type UserState = {
-  ResponseData: string;
+  responseData: string;
 };
 
 const initialState: UserState = {
-  ResponseData: '',
+  responseData: '',
 };
 
 const responseDataSlice = createSlice({
@@ -16,12 +16,12 @@ const responseDataSlice = createSlice({
   initialState,
   reducers: {
     updateResponseData: (state, action: PayloadAction<string>) => {
-      state.ResponseData = prettifyingService.formatJSON(action.payload);
+      state.responseData = prettifyingService.formatJSON(action.payload);
     },
   },
 });
 
-export const selectResponseData = (state: RootState) => state.responseData.ResponseData;
+export const selectResponseData = (state: RootState) => state.responseData.responseData;
 
 export const { updateResponseData } = responseDataSlice.actions;
 export const responseReducer = responseDataSlice.reducer;
