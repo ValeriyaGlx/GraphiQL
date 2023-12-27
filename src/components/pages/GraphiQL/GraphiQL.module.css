@@ -8,6 +8,7 @@
 .wrapper {
   display: flex;
   gap: 30px;
+  align-items: stretch;
   padding: 15px 0;
   height: 94%;
 }
@@ -15,5 +16,8 @@
 @media (max-width: 700px) {
   .wrapper {
     flex-direction: column;
+  }
+  .wrapper {
+    gap: 10px;
   }
 }

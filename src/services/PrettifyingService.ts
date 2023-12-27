@@ -34,32 +34,36 @@ class PrettifyingService {
     return true;
   }
 
+  public formatJSON(query: string) {
+    const queryWithoutEmptyLines = this.removeEmptyLinesAndParagraphs(query);
+    let result = '';
+    let indentationLevel = 0;
+
+    for (let i = 0; i < queryWithoutEmptyLines.length; i++) {
+      const el = queryWithoutEmptyLines[i];
+      if (el === '{' || el === '[') {
+        indentationLevel++;
+        result += `${el}\n` + '  '.repeat(indentationLevel);
+      } else if (el === '}' || el === ']') {
+        indentationLevel--;
+        result += '\n' + '  '.repeat(indentationLevel) + el;
+      } else if (el === ',') {
+        result += ',' + '\n' + '  '.repeat(indentationLevel);
+      } else {
+        result += el;
+      }
+    }
+
+    return result;
+  }
+
   public formatQuery(query: string, errorMessage: errorMessagePrettifying): string | Array<string> {
     try {
       const validationResult = this.checkBracketsValidity(query);
       if (typeof validationResult === 'string') {
         throw new Error(validationResult);
       }
-      const queryWithoutEmptyLines = this.removeEmptyLinesAndParagraphs(query);
-      let result = '';
-      let indentationLevel = 0;
-
-      for (let i = 0; i < queryWithoutEmptyLines.length; i++) {
-        const el = queryWithoutEmptyLines[i];
-
-        if (el === '{') {
-          indentationLevel++;
-          result += '{\n' + '  '.repeat(indentationLevel);
-        } else if (el === '}') {
-          indentationLevel--;
-          result += '\n' + '  '.repeat(indentationLevel) + '}';
-        } else if (el === ',') {
-          result += ',' + '\n' + '  '.repeat(indentationLevel);
-        } else {
-          result += el;
-        }
-      }
-      return result;
+      return this.formatJSON(query);
     } catch (error) {
       if ((error as Error).message === '{') {
         return [errorMessage.textOpeningParenthesis];
