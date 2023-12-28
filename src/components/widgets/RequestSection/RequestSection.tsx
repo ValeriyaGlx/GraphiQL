@@ -1,13 +1,14 @@
-import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
 
 import CustomAccordion from '../../entities/Accordion/CustomAccordion';
-import ControlledTextarea from '../../entities/ControlledTextarea/ControlledTextarea';
 import prettifyingService from '../../../services/PrettifyingService';
 import { useTranslation } from '../../../hooks';
 import TostifyMessage from '../../shared/TostifyMessage/TostifyMessage';
 import TostifyComponent from '../../shared/TostifyComponent/TostifyComponent';
 import { useActions } from '../../../hooks/useActions';
+import { selectRequestData } from '../../../store/slices/requestSlice';
+import Editor0RViewer from '../../entities/Editor0rViewer/Editor0rViewer';
 
 import styles from './RequestSection.module.css';
 
@@ -21,15 +22,16 @@ const test = {
 
 const RequestSection = () => {
   const translation = useTranslation();
-  const { updateResponseData } = useActions();
-  const [query, setQuery] = useState('');
+  const query = useSelector(selectRequestData);
+  const { updateResponseData, updateRequestData } = useActions();
+
   const handleButtonPrettierClick = () => {
     const { prettifyingFailed } = translation.notifications;
     const newQuery = prettifyingService.formatQuery(query, prettifyingFailed);
     if (Array.isArray(newQuery)) {
       toast.error(<TostifyMessage title={prettifyingFailed.title} text={newQuery[0]} />);
     } else {
-      setQuery(newQuery);
+      updateRequestData(newQuery);
     }
   };
 
@@ -42,7 +44,7 @@ const RequestSection = () => {
     <div className={styles.requestSection}>
       <div className={styles.wrapperButtons}>
         <div className={styles.textarea}>
-          <ControlledTextarea query={query} setQuery={setQuery} />
+          <Editor0RViewer readOnly={false} />
         </div>
         <div className={styles.wrapperButtonPlay}>
           <button className={styles.buttonPlay} onClick={handleButtonPlayClick} />

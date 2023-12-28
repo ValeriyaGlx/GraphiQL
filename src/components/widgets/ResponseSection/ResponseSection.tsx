@@ -1,15 +1,11 @@
-import { useSelector } from 'react-redux';
-
-import { selectResponseData } from '../../../store/slices/responseSlice';
+import Editor0RViewer from '../../entities/Editor0rViewer/Editor0rViewer';
 
 import styles from './ResponseSection.module.css';
 
 const ResponseSection = () => {
-  const responseData = useSelector(selectResponseData);
-
   return (
     <div className={styles.responseSection}>
-      <pre>{responseData}</pre>
+      <Editor0RViewer readOnly={true} />
     </div>
   );
 };
