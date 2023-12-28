@@ -22,7 +22,7 @@ class Api {
   }
 }
 
-export const createApi = (apiUrl: string) => {
+const createApi = (apiUrl: string) => {
   return new Api(apiUrl);
 };
 export default createApi;
