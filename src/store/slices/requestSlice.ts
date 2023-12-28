@@ -2,11 +2,11 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 import type { RootState } from '../store';
 
-type UserState = {
+type RequestState = {
   requestData: string;
 };
 
-const initialState: UserState = {
+const initialState: RequestState = {
   requestData: '',
 };
 

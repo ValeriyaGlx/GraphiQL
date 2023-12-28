@@ -9,20 +9,15 @@ import TostifyComponent from '../../shared/TostifyComponent/TostifyComponent';
 import { useActions } from '../../../hooks/useActions';
 import { selectRequestData } from '../../../store/slices/requestSlice';
 import Editor0RViewer from '../../entities/Editor0rViewer/Editor0rViewer';
+import createApi from '../../../services/ApiService';
+import { selectEndpointData } from '../../../store/slices/endpointSlice';
 
 import styles from './RequestSection.module.css';
-
-const test = {
-  characters: {
-    info: {
-      count: 826,
-    },
-  },
-};
 
 const RequestSection = () => {
   const translation = useTranslation();
   const query = useSelector(selectRequestData);
+  const apiUrl = useSelector(selectEndpointData);
   const { updateResponseData, updateRequestData } = useActions();
 
   const handleButtonPrettierClick = () => {
@@ -35,9 +30,10 @@ const RequestSection = () => {
     }
   };
 
-  const handleButtonPlayClick = () => {
-    const data = JSON.stringify(test);
-    updateResponseData(data);
+  const handleButtonPlayClick = async () => {
+    const api = createApi(apiUrl);
+    const data = await api.fetchInfo(query);
+    updateResponseData(JSON.stringify(data, null, 2));
   };
 
   return (
