@@ -8,7 +8,7 @@ import TostifyMessage from '../../shared/TostifyMessage/TostifyMessage';
 import TostifyComponent from '../../shared/TostifyComponent/TostifyComponent';
 import { useActions } from '../../../hooks/useActions';
 import { selectRequestData } from '../../../store/slices/requestSlice';
-import Editor0RViewer from '../../entities/Editor0rViewer/Editor0rViewer';
+import EditorOrViewer from '../../entities/Editor0rViewer/EditorOrViewer.tsx';
 import createApi from '../../../services/ApiService';
 import { selectEndpointData } from '../../../store/slices/endpointSlice';
 
@@ -40,7 +40,7 @@ const RequestSection = () => {
     <div className={styles.requestSection}>
       <div className={styles.wrapperButtons}>
         <div className={styles.textarea}>
-          <Editor0RViewer readOnly={false} />
+          <EditorOrViewer readOnly={false} />
         </div>
         <div className={styles.wrapperButtonPlay}>
           <button className={styles.buttonPlay} onClick={handleButtonPlayClick} />

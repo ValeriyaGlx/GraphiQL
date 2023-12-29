@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 import { selectResponseData } from '../../../store/slices/responseSlice';
 import ControlledTextarea from '../ControlledTextarea/ControlledTextarea';
 
-interface Editor0RViewerProps {
+interface EditorOrViewerProps {
   readOnly: boolean;
 }
-const Editor0RViewer = ({ readOnly }: Editor0RViewerProps) => {
+const EditorOrViewer = ({ readOnly }: EditorOrViewerProps) => {
   const responseData = useSelector(selectResponseData);
 
   if (readOnly) {
@@ -16,4 +16,4 @@ const Editor0RViewer = ({ readOnly }: Editor0RViewerProps) => {
   }
 };
 
-export default Editor0RViewer;
+export default EditorOrViewer;
