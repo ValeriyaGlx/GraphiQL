@@ -31,9 +31,11 @@ const RequestSection = () => {
   };
 
   const handleButtonPlayClick = async () => {
-    const api = createApi(apiUrl);
-    const data = await api.fetchInfo(query);
-    updateResponseData(JSON.stringify(data, null, 2));
+    if (query.trim()) {
+      const api = createApi(apiUrl);
+      const data = await api.fetchInfo(query);
+      updateResponseData(JSON.stringify(data, null, 2));
+    }
   };
 
   return (
