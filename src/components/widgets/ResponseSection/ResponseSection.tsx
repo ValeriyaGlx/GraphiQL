@@ -1,4 +1,4 @@
-import EditorOrViewer from '../../entities/Editor0rViewer/EditorOrViewer.tsx';
+import EditorOrViewer from '../../entities/EditorOrViewer/EditorOrViewer';
 
 import styles from './ResponseSection.module.css';
 

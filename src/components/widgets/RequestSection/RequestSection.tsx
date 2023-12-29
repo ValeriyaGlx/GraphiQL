@@ -8,7 +8,7 @@ import TostifyMessage from '../../shared/TostifyMessage/TostifyMessage';
 import TostifyComponent from '../../shared/TostifyComponent/TostifyComponent';
 import { useActions } from '../../../hooks/useActions';
 import { selectRequestData } from '../../../store/slices/requestSlice';
-import EditorOrViewer from '../../entities/Editor0rViewer/EditorOrViewer';
+import EditorOrViewer from '../../entities/EditorOrViewer/EditorOrViewer';
 import createApi from '../../../services/ApiService';
 import { selectEndpoint } from '../../../store/slices/endpointSlice';
 

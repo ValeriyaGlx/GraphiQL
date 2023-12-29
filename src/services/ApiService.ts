@@ -6,19 +6,15 @@ class Api {
   }
 
   async fetchInfo(query: string) {
-    try {
-      const response = await fetch(this.apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query }),
-      });
+    const response = await fetch(this.apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query }),
+    });
 
-      return await response.json();
-    } catch (error) {
-      throw error;
-    }
+    return await response.json();
   }
 }
 
