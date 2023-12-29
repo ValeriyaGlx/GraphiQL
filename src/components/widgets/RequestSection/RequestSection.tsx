@@ -8,16 +8,16 @@ import TostifyMessage from '../../shared/TostifyMessage/TostifyMessage';
 import TostifyComponent from '../../shared/TostifyComponent/TostifyComponent';
 import { useActions } from '../../../hooks/useActions';
 import { selectRequestData } from '../../../store/slices/requestSlice';
-import EditorOrViewer from '../../entities/Editor0rViewer/EditorOrViewer.tsx';
+import EditorOrViewer from '../../entities/Editor0rViewer/EditorOrViewer';
 import createApi from '../../../services/ApiService';
-import { selectEndpointData } from '../../../store/slices/endpointSlice';
+import { selectEndpoint } from '../../../store/slices/endpointSlice';
 
 import styles from './RequestSection.module.css';
 
 const RequestSection = () => {
   const translation = useTranslation();
   const query = useSelector(selectRequestData);
-  const apiUrl = useSelector(selectEndpointData);
+  const apiUrl = useSelector(selectEndpoint);
   const { updateResponseData, updateRequestData } = useActions();
 
   const handleButtonPrettierClick = () => {

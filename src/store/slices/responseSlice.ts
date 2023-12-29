@@ -15,7 +15,7 @@ const responseDataSlice = createSlice({
   initialState,
   reducers: {
     updateResponseData: (state, action: PayloadAction<string>) => {
-      state.responseData = action.payload.replace(/(['"])?([a-zA-Z0-9_]+)(['"])?:/g, '"$2":');
+      state.responseData = action.payload;
     },
   },
 });

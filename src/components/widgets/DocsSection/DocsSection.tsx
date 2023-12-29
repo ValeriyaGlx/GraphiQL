@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from '../../../hooks';
 import { themeInput } from '../../../utils/themeInput/themeInput';
 import DocumentationExplorer from '../../features/DocumentationExplorer/DocumentationExplorer';
-import { selectEndpointData } from '../../../store/slices/endpointSlice';
+import { selectEndpoint } from '../../../store/slices/endpointSlice';
 import { useActions } from '../../../hooks/useActions';
 
 import styles from './DocsSection.module.css';
@@ -13,11 +13,11 @@ import styles from './DocsSection.module.css';
 const DocsSection = () => {
   const translation = useTranslation();
   const [showDocumentation, setShowDocumentation] = useState(false);
-  const apiUrl = useSelector(selectEndpointData);
-  const { updateEndpointData } = useActions();
+  const apiUrl = useSelector(selectEndpoint);
+  const { updateEndpoint } = useActions();
 
   const handleEndpointChange = (event: ChangeEvent<HTMLInputElement>) => {
-    updateEndpointData(event.target.value);
+    updateEndpoint(event.target.value);
   };
 
   return (

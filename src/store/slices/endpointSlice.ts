@@ -14,13 +14,13 @@ const endpointSlice = createSlice({
   name: 'endpoint',
   initialState,
   reducers: {
-    updateEndpointData: (state, action: PayloadAction<string>) => {
+    updateEndpoint: (state, action: PayloadAction<string>) => {
       state.endpoint = action.payload;
     },
   },
 });
 
-export const selectEndpointData = (state: RootState) => state.endpoint.endpoint;
+export const selectEndpoint = (state: RootState) => state.endpoint.endpoint;
 
-export const { updateEndpointData } = endpointSlice.actions;
+export const { updateEndpoint } = endpointSlice.actions;
 export const endpointReducer = endpointSlice.reducer;
