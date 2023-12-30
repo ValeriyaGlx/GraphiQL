@@ -1,11 +1,7 @@
-import { useState, type ReactElement, cloneElement } from 'react';
+import { useState, cloneElement, type PropsWithChildren } from 'react';
 import { styled, Tooltip, tooltipClasses, type TooltipProps } from '@mui/material';
 
-interface HtmlTooltipProps extends TooltipProps {
-  children: ReactElement;
-}
-
-const HtmlTooltip = styled(({ className, children, ...props }: HtmlTooltipProps) => {
+const HtmlTooltip = styled(({ className, children, ...props }: PropsWithChildren<TooltipProps>) => {
   const [open, setOpen] = useState(false);
 
   return (

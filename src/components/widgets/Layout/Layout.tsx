@@ -1,7 +1,6 @@
 import { Container } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useEffect, useState } from 'react';
 
 import { auth } from '../../../firebase/firebase';
 import Footer from '../Footer/Footer';
@@ -12,13 +11,8 @@ import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 
 const Layout = () => {
   const [, loading] = useAuthState(auth);
-  const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setLoading(loading);
-  }, [loading]);
-
-  if (isLoading) return <LoaderBig open={isLoading} />;
+  if (loading) return <LoaderBig open={loading} />;
 
   return (
     <ErrorBoundary>

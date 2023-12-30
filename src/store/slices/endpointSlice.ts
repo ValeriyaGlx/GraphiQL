@@ -1,14 +1,14 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 import type { RootState } from '../store';
-import { DEFAULT_ENDPOINT } from '../../constants';
+import { ENDPOINT } from '../../constants';
 
 type EndpointState = {
   endpoint: string;
 };
 
 const initialState: EndpointState = {
-  endpoint: DEFAULT_ENDPOINT,
+  endpoint: ENDPOINT,
 };
 
 const endpointSlice = createSlice({
