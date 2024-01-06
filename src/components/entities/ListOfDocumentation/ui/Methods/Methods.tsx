@@ -28,7 +28,7 @@ const Methods = ({ graphQLDocSchema, setHistory, history }: MethodsProps) => {
 
   const handleClick = ({ currentTarget }: MouseEvent<HTMLSpanElement>) => {
     const typeName = currentTarget.textContent!;
-    const type = graphQLDocSchema.getType(typeName as string);
+    const type = graphQLDocSchema.getType(typeName);
     setHistory((prevHistory) => [...prevHistory, type]);
     setNewType(type);
     if (type) {
