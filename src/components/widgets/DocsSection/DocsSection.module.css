@@ -7,7 +7,7 @@
   gap: 10px;
 }
 
-.inputEndpoind {
+.inputEndpoint {
   background-color: var(--dark-grey-color);
   width: calc(50% - 75px);
 }

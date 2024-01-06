@@ -35,7 +35,7 @@ const DocsSection = () => {
           {documentationStatus === 'error' ? (
             <TextField
               error
-              className={styles.inputEndpoind}
+              className={styles.inputEndpoint}
               label={translation.error}
               id="filled-size-small"
               variant="filled"
@@ -46,7 +46,7 @@ const DocsSection = () => {
             />
           ) : (
             <TextField
-              className={styles.inputEndpoind}
+              className={styles.inputEndpoint}
               label={translation.endpoint}
               id="filled-size-small"
               variant="filled"
