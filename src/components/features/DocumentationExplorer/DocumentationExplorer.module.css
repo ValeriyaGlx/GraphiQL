@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+
+.close {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-image: url("../../../assets/icons/close-cross.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 0.5s;
+  z-index: 2;
+}
+
+.close:hover {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.2em;
+  }
+
+  .close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}

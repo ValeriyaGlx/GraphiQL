@@ -1,0 +1,240 @@
+{
+  "en": {
+    "welcome": "Welcome to GraphiQL!",
+    "welcomeLink": "Welcome",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "signout": "Sign Out",
+    "404": "Page not found",
+    "settings": "Settings",
+    "applicationDevelopers": "Application Developers",
+    "developers": [
+      {
+        "name": "Valeriia Galakhova",
+        "image": "https://avatars.githubusercontent.com/u/115462690?v=4",
+        "href": "https://github.com/ValeriyaGlx",
+        "description": "This is the Team Leader specializing in interface design. Strong JavaScript skills are combined with creative design, resulting in aesthetic and functional applications. Continuously improving, adhering to high-quality standards."
+      },
+      {
+        "name": "Maria Stroich",
+        "image": "https://avatars.githubusercontent.com/u/119624478?v=4",
+        "href": "https://github.com/stroich",
+        "description": "Creative frontend developer specializing in crafting intuitive interfaces using React and TypeScript. Proficient in building interactive designs that deliver an excellent user experience. Constantly refining skills and adhering to high-quality standards."
+      },
+      {
+        "name": "Aliaksei Krutsko",
+        "image": "https://avatars.githubusercontent.com/u/15146619?v=4",
+        "href": "https://github.com/akrutsko",
+        "description": "A talented frontend developer specializing in React and TypeScript. His enthusiasm for cutting-edge technologies and ability to create efficient and clean code make him a key member of our team."
+      }
+    ],
+    "languageSetting": "Language",
+    "languageSettingDescription": "Choose the current language of the App",
+    "themeSetting": "Theme",
+    "themeSettingDescription": "Adjust how the interface looks like",
+    "languageToggle": [
+      {
+        "name": "En",
+        "value": "en"
+      },
+      {
+        "name": "Ru",
+        "value": "ru"
+      }
+    ],
+    "themeToggle": [
+      { "name": "Dark", "value": "dark" },
+      { "name": "Light", "value": "light" }
+    ],
+    "submit": "Submit",
+    "placeholders": ["Enter Email", "Enter Password", "Confirm Password"],
+    "variables": "Variables",
+    "headers": "Headers",
+    "endpoint": "Endpoint",
+    "error": "Wrong endpoint",
+    "projectInfo": [
+      "Our platform provides you with unique opportunities to interact with GraphQL API. Here, you can easily experiment with various endpoints, input queries, manage variables and headers, and then enjoy the results of your efforts.",
+
+      "GraphiQL Playground is designed with your comfort and understanding in mind. We offer an intuitive interface that will make exploring the power of GraphQL a breeze. Your queries will become simpler, and the results more accessible.",
+
+      "Join us, and let's uncover the magic of GraphQL together. GraphiQL Playground is your reliable partner in learning and utilizing GraphQL API. Enjoy the journey through GraphQL functionality with ease and pleasure!",
+
+      "\nDeveloped with assistance from The Rolling Scopes School, this project proudly acknowledges the support provided by RS School — a premier institution offering community-driven educational programs at no cost. The project serves as a culmination of the React course."
+    ],
+    "schema": {
+      "email": {
+        "required": "Email is required",
+        "email": "Email must be valid (example@mail.com)"
+      },
+      "password": {
+        "required": "Password is required",
+        "whitespace": "Password must not contain spaces",
+        "letter": "Password must contain at least one letter",
+        "number": "Password must contain at least one number",
+        "symbol": "Password must contain at least one special character",
+        "length": "Password must be at least 8 characters"
+      },
+      "confirm": {
+        "required": "Confirm password is required",
+        "match": "Passwords must match"
+      }
+    },
+    "notifications": {
+      "signinFailed": {
+        "title": "Login Failed!",
+        "text": "Please, recheck the email and password and try again"
+      },
+      "signupFailed": {
+        "title": "Signup Failed!",
+        "text": "Maybe you’re already registered.\nPlease, recheck your data and try again"
+      },
+      "prettifyingFailed": {
+        "title": "Prettifying Failed!",
+        "textClosingParenthesis": "Extra closing parenthesis detected",
+        "textOpeningParenthesis": "Extra opening parenthesis detected"
+      },
+      "fetchingFailed": {
+        "title": "Fetching Error",
+        "text": "Failed to fetch data. \nCheck your data and try again"
+      },
+      "requestFailed": {
+        "title": "Invalid Request!",
+        "textVariables": "Please ensure that the variable editor contains the correct brackets and syntax.",
+        "textHeaders": "Please ensure that the header editor contains the correct brackets and syntax."
+      }
+    },
+    "documentationExplorer": "Documentation Explorer",
+    "tooltip": {
+      "docs": "Documentation",
+      "play": "Execute query",
+      "prettify": "Prettify"
+    },
+    "docs": {
+      "rootType": "Root Types",
+      "desc": "A GraphQL schema provides a root type for each kind of operation",
+      "noDesc": "No description",
+      "kind": "Kind",
+      "back": "Back to",
+      "schema": "Schema"
+    }
+  },
+  "ru": {
+    "welcome": "Добро пожаловать в GraphiQL!",
+    "welcomeLink": "Домой",
+    "signin": "Вход",
+    "signup": "Регистрация",
+    "signout": "Выход",
+    "404": "Страница не найдена",
+    "settings": "Настройки",
+    "applicationDevelopers": "Разработчики приложения",
+    "developers": [
+      {
+        "name": "Валерия Галахова",
+        "image": "https://avatars.githubusercontent.com/u/115462690?v=4",
+        "href": "https://github.com/ValeriyaGlx",
+        "description": "Лидер команды, специализируется на создании интерфейсов. Сильные навыки в JavaScript сочетаются с творческим дизайном, результат — эстетичные и функциональные приложения. Постоянно совершенствуется, придерживается высоких стандартов качества."
+      },
+      {
+        "name": "Мария Строич",
+        "image": "https://avatars.githubusercontent.com/u/119624478?v=4",
+        "href": "https://github.com/stroich",
+        "description": "Креативный фронтенд-разработчик, предпочитающий разрабатывать интуитивно понятные интерфейсы с использованием React и TypeScript. Специализируется на построении интерактивных интерфейсов, которые обеспечивают отличный пользовательский опыт."
+      },
+      {
+        "name": "Алексей Крутько",
+        "image": "https://avatars.githubusercontent.com/u/15146619?v=4",
+        "href": "https://github.com/akrutsko",
+        "description": "Талантливый фронтенд-разработчик, специализирующимся на React и TypeScript. Его энтузиазм по отношению к передовым технологиям и умение создавать эффективный и чистый код делают его ключевым членом нашей команды."
+      }
+    ],
+    "languageSetting": "Язык",
+    "languageSettingDescription": "Выберите текущий язык приложения",
+    "themeSetting": "Тема",
+    "themeSettingDescription": "Настройте как будет выглядеть интерфейс",
+    "languageToggle": [
+      {
+        "name": "Англ",
+        "value": "en"
+      },
+      {
+        "name": "Рус",
+        "value": "ru"
+      }
+    ],
+    "themeToggle": [
+      { "name": "Темная", "value": "dark" },
+      { "name": "Светлая", "value": "light" }
+    ],
+    "submit": "Отправить",
+    "placeholders": ["Введите Эл. почту", "Введите Пароль", "Повторите Пароль"],
+    "variables": "Переменные",
+    "headers": "Заголовки",
+    "endpoint": "Конечная точка",
+    "error": "Неправильная конечная точка",
+    "projectInfo": [
+      "Наша платформа предоставляет вам уникальные возможности взаимодействия с GraphQL API. Здесь вы можете легко экспериментировать с различными конечными точками, вводить запросы, управлять переменными и заголовками, а затем наслаждаться результатами вашего труда.",
+
+      "GraphiQL Playground создан с учетом вашего комфорта и понимания. Мы предлагаем интуитивно понятный интерфейс, который облегчит вам исследование мощи GraphQL. Ваши запросы станут проще, а результаты - более доступными.",
+
+      "Присоединяйтесь к нам, и давайте вместе раскроем всю магию GraphQL. GraphiQL Playground - это ваш надежный партнер в изучении и использовании GraphQL API. Наслаждайтесь путешествием по функциональности GraphQL с легкостью и удовольствием!",
+
+      "Создано при поддержке The Rolling Scopes School, этот проект с гордостью выражает благодарность за поддержку от RS School - ведущего учебного заведения, предоставляющего образовательные программы, ориентированные на разработчиков, абсолютно бесплатно. Проект является завершением курса по React."
+    ],
+    "schema": {
+      "email": {
+        "required": "Требуется электронная почта",
+        "email": "Невалидная эл. почта (example@mail.com)"
+      },
+      "password": {
+        "required": "Требуется пароль",
+        "whitespace": "Пароль не должен содержать пробелы",
+        "letter": "Пароль должен содержать минимум одну букву",
+        "number": "Пароль должен содержать минимум одну цифру",
+        "symbol": "Пароль должен содержать хотя бы один символ",
+        "length": "Пароль должен содержать минимум 8 символов"
+      },
+      "confirm": {
+        "required": "Требуется подтверждение пароля",
+        "match": "Пароли должны совпадать"
+      }
+    },
+    "notifications": {
+      "signinFailed": {
+        "title": "Не удалось войти!",
+        "text": "Пожалуйста, проверьте данные и попробуйте снова"
+      },
+      "signupFailed": {
+        "title": "Ошибка регистрации!",
+        "text": "Возможно, вы уже зарегистрированы.\nПожалуйста, проверьте данные и попробуйте снова"
+      },
+      "prettifyingFailed": {
+        "title": "Ошибка форматирования!",
+        "textClosingParenthesis": "Обнаружена лишняя закрывающая скобка",
+        "textOpeningParenthesis": "Обнаружена лишняя открывающая скобка"
+      },
+      "fetchingFailed": {
+        "title": "Ошибка запроса",
+        "text": "Ошибка получения данных. Проверьте данные и повторите попытку"
+      },
+      "requestFailed": {
+        "title": "Запрос неверен!",
+        "textVariables": "Пожалуйста, убедитесь, что редактор переменных содержит правильные скобки и синтаксис.",
+        "textHeaders": "Пожалуйста, убедитесь, что редактор заголовков содержит правильные скобки и синтаксис."
+      }
+    },
+    "documentationExplorer": "Обозреватель документации",
+    "tooltip": {
+      "docs": "Документация",
+      "play": "Выполнить запрос",
+      "prettify": "Форматировать"
+    },
+    "docs": {
+      "rootType": "Корневые типы",
+      "desc": "GraphQL-схема предоставляет корневой тип для каждого вида операции",
+      "noDesc": "Нет описания",
+      "kind": "Тип",
+      "back": "Назад к",
+      "schema": "Schema"
+    }
+  }
+}
